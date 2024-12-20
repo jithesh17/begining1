@@ -1,14 +1,13 @@
-public class ListEvenNumbers {
-public static void main(String[] args) {
+public class Even {
+    public static void main(String[] args) {
+        // Define two numbers
+        int num1 = 15; // First number
+        int num2 = 25; // Second number
 
-int limit = 50;
-System.out.println("Printing Even numbers between 1 and " +
-limit);
-for(int i=1; i <= limit; i++){
+        // Calculate the sum
+        int sum = num1 + num2;
 
-if( i % 2 == 0){
-System.out.print(i + " ");
-}
-}
-}
+        // Display the result
+        System.out.println("The sum of " + num1 + " and " + num2 + " is: " + sum);
+    }
 }
