@@ -1,11 +1,40 @@
-# Define two numbers
-num1 = 10  # You can change this value
-num2 = 20  # You can change this value
+import java.util.Scanner;
 
-# Calculate the sum
-sum = num1 + num2
+public class BusTicketBooking {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int totalSeats = 40;
 
-# Display the result
-print(f"The sum of {num1} and {num2} is: {sum}")
+        try {
+            
+            System.out.println("Welcome to Bus Ticket Booking!");
+            System.out.println("Total seats available: " + totalSeats);
 
-  
+           
+            System.out.print("Enter the number of tickets you want to book: ");
+            int tickets = scanner.nextInt();
+
+            
+            if (tickets <= 0) {
+                throw new IllegalArgumentException("Error: Ticket count must be greater than 0.");
+            } else if (tickets > totalSeats) {
+                throw new IllegalArgumentException("Error: Not enough seats available.");
+            }
+
+        
+            totalSeats -= tickets;
+            System.out.println("Booking successful! Tickets booked: " + tickets);
+            System.out.println("Seats remaining: " + totalSeats);
+
+        } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+        } catch (Exception e) {
+            
+            System.out.println("An unexpected error occurred: " + e.getMessage());
+        } finally {
+            
+            System.out.println("Thank you for using the Bus Ticket Booking System.");
+            scanner.close();
+        }
+    }
+}
